@@ -55,7 +55,7 @@ Possible values are:
 * `kitty-remote`: use the kitty protocol in "remote" mode, meaning _presenterm_ and the terminal run in different hosts 
   and therefore can only communicate via terminal escape codes.
 * `iterm2`: use the iterm2 protocol.
-* `sixel`: use the sixel protocol. Note that this requires compiling _presenterm_ using the `--features sixel` flag.
+* `sixel`: use the sixel protocol.
 
 ## Maximum presentation width
 
@@ -289,10 +289,35 @@ snippet:
     threads: 2
 ```
 
-## Mermaid scaling
+## Mermaid
 
-[mermaid](https://mermaid.js.org/) graphs will use a default scaling of `2` when invoking the mermaid CLI. If you'd like 
-to change this use:
+The following configuration parameters can be set to alter the behavior when displaying 
+[mermaid](https://mermaid.js.org/) diagrams.
+
+### Config file
+
+A custom [mermaid config file](https://mermaid.ai/open-source/config/schema-docs/config.html) can be configured via the 
+`mermaid.config_file` config parameter. This should point to a configuration file where you can set any configs you 
+consider appropriate, such as the font family to use:
+
+```yaml
+mermaid:
+  config_file: /home/foo/my_config_file.yml
+```
+
+### Puppeteer config file
+
+A custom puppeteer config file can be configured via the `mermaid.puppeteer_config_file` config parameter. This should 
+point to a configuration file that will be given to puppeteer by the `mmdc` tool:
+
+```yaml
+mermaid:
+  puppeteer_config_file: /home/foo/puppeteer.json
+```
+
+### Scaling
+
+mermaid graphs will use a default scaling of `2` when invoking the mermaid CLI. If you'd like to change this use:
 
 
 ```yaml

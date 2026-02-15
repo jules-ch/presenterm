@@ -46,7 +46,7 @@ Visit the [documentation][docs-introduction] to get started.
 * [_LaTeX_ and _typst_ formula rendering][docs-latex].
 * [Introduction slide][docs-intro-slide] that displays the presentation title and your name.
 * [Slide titles][docs-slide-titles].
-* [Snippet execution][docs-code-execute] for various programming languages.
+* [Snippet execution][docs-code-execute] for various programming languages, including execution inside pseudo terminals.
 * [Export presentations to PDF and HTML][docs-exports].
 * [Slide transitions][docs-slide-transitions].
 * [Pause][docs-pauses] portions of your slides.
@@ -66,6 +66,7 @@ Here are some talks and demos that feature _presenterm_:
 - [Using Nix on Apple Silicon and declarative development environments][NiXOS-and-Dev] by [pwnwriter][pwnwriter-github]
 - [Hayasen: A Robust Embedded Rust Library which supports multiple sensors][hayasen] by [Vaishnav-Sabari-Girish][vaishnav]
 - [Using ratatui in Embedded sytems : Meet Mousefood][mousefood] by [Vaishnav-Sabari-Girish][vaishnav]
+
 Gave a talk using _presenterm_? We would love to feature it here! Open a PR or issue to get it added.
 
 <!-- links -->

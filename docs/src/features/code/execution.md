@@ -80,6 +80,30 @@ fn main() {
 }
 ```
 
+## Running code in pseudo terminal (PTY)
+
+By using the `+pty` attribute, you can run a code snippet inside a pseudo terminal. This allows running tools like `top` 
+and `htop` which move the cursor around, clear the screen, etc, and have them behave how you'd expect.
+
+[![asciicast](https://asciinema.org/a/PWdPtehxI6xwM7Yt.svg)](https://asciinema.org/a/PWdPtehxI6xwM7Yt)
+
+Note that this can be used with snippets in any language, not necessarily only shell scripts. 
+
+> [!note]
+> Support for sending keyboard input into running scripts is planned but not currently supported.
+
+### Specifying PTY size
+
+The size of the PTY used to execute the code will be expanded to fit the screen. A custom size can be set by using the 
+`+pty:<columns>:<rows>` syntax, e.g. `+pty:80:30`.
+
+### Standby mode
+
+A `+pty:standby` block indicates the area of the slide the PTY will be rendered on should always be visible, even before 
+the code is executed. Note that if you're also configuring the PTY size, the syntax is `+pty:standby:<columns>:<rows>` 
+
+[![asciicast](https://asciinema.org/a/IrclITxMSkBZPPH3.svg)](https://asciinema.org/a/IrclITxMSkBZPPH3)
+
 ## Executing and replacing
 
 Similar to `+exec`, `+exec_replace` causes a snippet to be executable but:
@@ -94,6 +118,10 @@ This can be useful to run programs that generate some form of ASCII art that you
 Because of the risk involved in `+exec_replace`, where code gets automatically executed when running a presentation, 
 this requires users to explicitly opt in to it. This can be done by either passing in the `-X` command line parameter
 or setting the `snippet.exec_replace.enable` flag in your configuration file to `true`.
+
+## Automatic execution
+
+The `+auto_exec` property behaves like a `+exec` code block but doesn't require pressing `<c-e>` to execute it.
 
 ## Alternative executors
 
