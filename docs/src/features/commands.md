@@ -159,14 +159,12 @@ be ignored during presentation rendering can be added using these formats:
 <!-- // This is a user comment -->
 <!-- comment: This is also a user comment which won't be rendered -->
 ```
-These comments are completely invisible during presentation and useful for:
 
-- Personal notes and reminders
-- TODO items and planning notes
-- Source references and attribution
+These are useful for:
 
-
-
+- Personal notes and reminders.
+- TODO items and planning notes.
+- Source references and attribution.
 
 ## Listing available comment commands
 
