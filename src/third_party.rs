@@ -31,7 +31,7 @@ use std::{
 pub struct ThirdPartyConfigs {
     pub typst_ppi: String,
     pub mermaid_scale: String,
-    pub mermaid_pupeteer_file: Option<String>,
+    pub mermaid_puppeteer_file: Option<String>,
     pub mermaid_config_file: Option<String>,
     pub d2_scale: String,
     pub threads: usize,
@@ -69,7 +69,7 @@ impl Default for ThirdPartyRender {
         let config = ThirdPartyConfigs {
             typst_ppi: default_typst_ppi().to_string(),
             mermaid_scale: default_mermaid_scale().to_string(),
-            mermaid_pupeteer_file: None,
+            mermaid_puppeteer_file: None,
             mermaid_config_file: None,
             d2_scale: "-1".to_string(),
             threads: default_snippet_render_threads(),
@@ -215,7 +215,7 @@ impl Worker {
             "-b",
             &style.background,
         ];
-        if let Some(path) = &self.shared.config.mermaid_pupeteer_file {
+        if let Some(path) = &self.shared.config.mermaid_puppeteer_file {
             args.extend(&["-p", path]);
         }
         if let Some(path) = &self.shared.config.mermaid_config_file {
