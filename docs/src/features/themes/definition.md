@@ -219,7 +219,7 @@ footer:
 
 ## Slide title
 
-Slide titles, as specified by using a setext header, has the following properties:
+Slide titles, as specified by using a setext header, has the following properties in addition to styling and colors, just like any other element:
 
 * `font_size` which specifies the font size to be used.
 * `prefix` which specifies a prefix to use on a slide title.
@@ -234,6 +234,9 @@ slide_title:
   padding_bottom: 1
   padding_top: 1
   separator: true
+  bold: true
+  colors:
+    foreground: "beeeeff"
 ```
 
 ## Headings
