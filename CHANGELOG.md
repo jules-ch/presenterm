@@ -2,7 +2,7 @@
 
 ## Breaking changes
 
-* Sixel supported in all platform and is now enabled by default. The will break any build scripts that enable the `sixel` feature flag since that is now gone. Any maintainer that is building the package and enabling that flag should no longer do so ([#828](https://github.com/mfontanini/presenterm/issues/828)).
+* Sixel is now supported in all platform and enabled by default. The will break any build scripts that enable the `sixel` feature flag since that is now gone. Any maintainer that is building the package and enabling that flag should no longer do so ([#828](https://github.com/mfontanini/presenterm/issues/828)).
 
 ## New features
 
