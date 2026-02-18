@@ -69,8 +69,8 @@ Every element can have its own background/foreground color using hex notation:
 ```yaml
 default:
   colors:
-    foreground: "ff0000"
-    background: "00ff00"
+    foreground: ff0000
+    background: 00ff00
 ```
 
 ## Default style
@@ -219,47 +219,69 @@ footer:
 
 ## Slide title
 
-Slide titles, as specified by using a setext header, has the following properties in addition to styling and colors, just like any other element:
-
-* `font_size` which specifies the font size to be used.
-* `prefix` which specifies a prefix to use on a slide title.
-* `padding_top` which specifies the number of rows you want as padding before the text.
-* `padding_bottom` which specifies the number of rows you want as padding after the text.
-* `separator` which specifies whether you want a horizontal ruler after the text (and the `padding_bottom`):
+Slide titles, as specified by using a setext header, can be styled the following way:
 
 ```yaml
 slide_title:
+  # The prefix to use for the slide title.
   prefix: "██"
+
+  # The font size to use.
   font_size: 2
-  padding_bottom: 1
+
+  # The vertical padding added before the title.
   padding_top: 1
+
+  # The vertical padding added after the title.
+  padding_bottom: 1
+
+  # Whether to use a horizontal separator line after the title.
   separator: true
+
+  # Whether to style for the title using bold text.
   bold: true
+
+  # Whether to style for the title using underlined text.
+  underlined: true
+
+  # Whether to style for the title using italics text.
+  italics: true
+
+  # The colors to use.
   colors:
-    foreground: "beeeeff"
+    foreground: beeeff
+    background: feeedd
 ```
 
 ## Headings
 
-Every header type (h1 through h6) can have its own style composed of:
-
-* The prefix you want to use.
-* The colors, just like any other element:
-* Whether to use bold/italics/underlined styling.
+Every header type (h1 through h6) can have its own style. Each of them can be styled using the following attributes:
 
 ```yaml
 headings:
+  # H1 style.
   h1:
+    # The prefix to use for the heading
     prefix: "██"
+
+    # The colors to use.
     colors:
-      foreground: "beeeeff"
+      foreground: beeeff
+      background: feeedd
+    # Whether to style for the title using bold text.
     bold: true
+
+    # Whether to style for the title using underlined text.
     underlined: true
+
+    # Whether to style for the title using italics text.
     italics: true
+  
+  # H2 style, same as the keys for H1.
   h2:
     prefix: "▓▓▓"
     colors:
-      foreground: "feeeedd"
+      foreground: feeedd
 ```
 
 ## Code blocks
