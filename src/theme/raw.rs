@@ -44,7 +44,7 @@ pub struct PresentationTheme {
     pub(crate) bold: ModifierStyle,
 
     /// The style for italics.
-    #[serde(default)]
+    #[serde(default, alias = "italic")]
     pub(crate) italics: ModifierStyle,
 
     /// The style for a table.
@@ -142,7 +142,7 @@ pub(crate) struct SlideTitleStyle {
     pub(crate) bold: Option<bool>,
 
     /// Whether to use italics font for slide titles.
-    #[serde(default)]
+    #[serde(default, alias = "italic")]
     pub(crate) italics: Option<bool>,
 
     /// Whether to use underlined font for slide titles.
@@ -212,7 +212,7 @@ pub(crate) struct HeadingStyle {
     pub(crate) underlined: Option<bool>,
 
     /// Whether the heading uses italics.
-    #[serde(default)]
+    #[serde(default, alias = "italic")]
     pub(crate) italics: Option<bool>,
 }
 
