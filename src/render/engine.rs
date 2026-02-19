@@ -149,6 +149,7 @@ where
             RenderOperation::RenderImage(image, properties) => self.render_image(image, properties),
             RenderOperation::RenderBlockLine(operation) => self.render_block_line(operation),
             RenderOperation::RenderDynamic(generator) => self.render_dynamic(generator.as_ref()),
+            RenderOperation::RenderDynamicTopLevel(generator) => self.render_dynamic_top_level(generator.as_ref()),
             RenderOperation::RenderAsync(generator) => self.render_async(generator.as_ref()),
             RenderOperation::InitColumnLayout { columns, grid } => self.init_column_layout(columns, *grid),
             RenderOperation::EnterColumn { column } => self.enter_column(*column),
@@ -351,6 +352,15 @@ where
 
     fn render_dynamic(&mut self, generator: &dyn AsRenderOperations) -> RenderResult {
         let operations = generator.as_render_operations(&self.current_available_dimensions());
+        for operation in operations {
+            self.render_one(&operation)?;
+        }
+        Ok(())
+    }
+
+    fn render_dynamic_top_level(&mut self, generator: &dyn AsRenderOperations) -> RenderResult {
+        let dimensions = self.window_rects.first().expect("no rects").dimensions;
+        let operations = generator.as_render_operations(&dimensions);
         for operation in operations {
             self.render_one(&operation)?;
         }
