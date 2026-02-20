@@ -1,3 +1,18 @@
+# v0.16.1 - 2026-02-19
+
+## New features
+
+* Allow `italic` to be used as well as `italics` in theme ([#847](https://github.com/mfontanini/presenterm/issues/847)).
+
+## Fixes
+
+* Render modals at the center of the screen ([#848](https://github.com/mfontanini/presenterm/issues/848)).
+
+## Docs
+
+* Add styling docs to `slide_title` ([#845](https://github.com/mfontanini/presenterm/issues/845)) - thanks @0atman.
+* Describe slide titles and headings better ([#846](https://github.com/mfontanini/presenterm/issues/846)).
+
 # v0.16.0 - 2026-02-15
 
 ## Breaking changes
