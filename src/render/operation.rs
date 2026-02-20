@@ -74,6 +74,9 @@ pub(crate) enum RenderOperation {
     /// [RenderOperation] with the screen itself.
     RenderDynamic(Rc<dyn AsRenderOperations>),
 
+    /// Render a dynamically sequence of render operations drawing it at the top level margin
+    RenderDynamicTopLevel(Rc<dyn AsRenderOperations>),
+
     /// An operation that is rendered asynchronously.
     RenderAsync(Rc<dyn RenderAsync>),
 
