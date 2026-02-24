@@ -132,6 +132,7 @@ impl SnippetHighlighter {
             GraphQL => "graphql",
             Haskell => "hs",
             Html => "html",
+            Http => "http",
             Java => "java",
             JavaScript => "js",
             Json => "json",
